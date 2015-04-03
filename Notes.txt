@@ -1,0 +1,3 @@
+SDP files are always UTF-8 encoded.
+
+Mime: application/sdp
