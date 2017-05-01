@@ -6,7 +6,7 @@
 
     <groupId>xpertss</groupId>
     <artifactId>sdp</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
 
    <licenses>
       <license>
@@ -70,27 +70,10 @@
               </configuration>
               <executions>
                  <execution>
-                    <phase>install</phase>
                     <goals>
                        <goal>jar</goal>
                        <goal>test-jar</goal>
                     </goals>
-                 </execution>
-              </executions>
-           </plugin>
-           <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.9.1</version>
-              <configuration>
-                 <aggregate>true</aggregate>
-                 <links><link>http://docs.oracle.com/javase/7/docs/api/</link></links>
-                 <encoding>UTF-8</encoding>
-              </configuration>
-              <executions>
-                 <execution>
-                    <id>attach-javadocs</id>
-                    <goals><goal>jar</goal></goals>
                  </execution>
               </executions>
            </plugin>
@@ -101,7 +84,7 @@
         <dependency>
             <groupId>xpertss</groupId>
             <artifactId>stdlib</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.7</version>
         </dependency>
 
         <dependency>
