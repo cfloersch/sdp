@@ -14,9 +14,10 @@ import xpertss.lang.Strings;
 /**
  * An Origin represents the o= fields contained within a SessionDescription and
  * identifies the originator of the session.
- * <p><pre>
+ * <p>
+ * {@code
  *    o=<username> <sess-id> <sess-version> <nettype> <addrtype> <unicast-address>
- * </pre><p>
+ * }<p>
  * This is not necessarily the same entity who is involved in the session.
  * <p>
  * The Origin contains:

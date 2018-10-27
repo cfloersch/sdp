@@ -24,13 +24,14 @@ import static xpertss.sdp.SdpConstants.NETWORK_TYPE_INTERNET;
  * address is derived from the current machine's ip address. If you would like to
  * protect that information then please ensure you specify valid values for those
  * fields.
- * <p>Example<p><pre>
+ * <p>Example<p>
+ * {@code
  *    OriginBuilder builder = OriginBuilder.create(currentOrigin);
  *    builder.setUsername("JoeBlow");  // change the username
  *    // Increment the current session version
  *    builder.setSessionVersion(builder.getSessionVersion() + 1);
  *    Origin newOrigin = builder.build();
- * </pre></p>
+ * }</p>
  * An instance of origin builder is not thread safe.
  */
 public final class OriginBuilder {

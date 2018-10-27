@@ -34,9 +34,9 @@ import java.util.Date;
  *     allows the sender to specify a list of these adjustment times and offsets
  *     from the base time.
  * </pre><p>
- * <pre>
+ * {@code
  *    z=<adjustment time> <offset> <adjustment time> <offset>
- * </pre><p>
+ * }<p>
  * Please refer to IETF RFC 4566 for a description of SDP.
  *
  * @version 1.0

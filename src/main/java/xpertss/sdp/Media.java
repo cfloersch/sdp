@@ -18,9 +18,9 @@ import java.util.Arrays;
  * identifies information about the format(s) of the media associated with the
  * MediaDescription.
  * <p>
- * <pre>
+ * {@code
  *    m=<media> <port>/<number of ports> <protocol> <media formats>
- * </pre>
+ * }
  * <p>
  * The Media field includes:
  * <ul>
@@ -31,10 +31,11 @@ import java.util.Arrays;
  *       media description</li>
  * </ul>
  * Here is an example:
- * <p><pre>
+ * <p>
+ * {@code
  *    m=audio 60000 RTP/AVP 0
  *    a=rtpmap:0 PCMU/8000
- * </pre><p>
+ * }<p>
  * This example identifies that the client can receive audio on port 60000 in
  * format 0 which corresponds to PCMU/8000.
  * <p>
