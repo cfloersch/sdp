@@ -7,6 +7,6 @@ package xpertss.sdp;
 
 import java.io.Serializable;
 
-public abstract class Section implements Serializable, Cloneable {
+abstract class Section implements Serializable, Cloneable {
 
 }

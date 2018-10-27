@@ -25,13 +25,15 @@ import static xpertss.sdp.SdpConstants.NETWORK_TYPE_INTERNET;
  * protect that information then please ensure you specify valid values for those
  * fields.
  * <p>Example<p>
+ * <pre>
  * {@code
  *    OriginBuilder builder = OriginBuilder.create(currentOrigin);
  *    builder.setUsername("JoeBlow");  // change the username
  *    // Increment the current session version
  *    builder.setSessionVersion(builder.getSessionVersion() + 1);
  *    Origin newOrigin = builder.build();
- * }</p>
+ * }
+ * </pre>
  * An instance of origin builder is not thread safe.
  */
 public final class OriginBuilder {

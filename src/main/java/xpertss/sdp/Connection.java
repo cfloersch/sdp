@@ -25,9 +25,9 @@ import xpertss.lang.Strings;
  *    <li>c=IN IP4 myhost.somewhere.com (no ttl and only one address)</li>
  *    <li>c=IN IP4 myhost.somewhere.com/5 (a ttl of 5)</li>
  *    <li>c=IN IP4 myhost.somewhere.com/5/2 (a ttl of 5 and 2 addresses)</li>
- * </ul>
+ * </ul><p>
  * This implementation does not explicitly support ttl and number of addresses.
- *
+ * <p>
  * Please refer to IETF RFC 4566 for a description of SDP.
  *
  * @version 1.0

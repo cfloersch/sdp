@@ -30,12 +30,13 @@ import java.util.Arrays;
  *   <li>a set of media formats which correspond to Attributes associated with the
  *       media description</li>
  * </ul>
+ * <p>
  * Here is an example:
  * <p>
- * {@code
+ * <pre>
  *    m=audio 60000 RTP/AVP 0
  *    a=rtpmap:0 PCMU/8000
- * }<p>
+ * </pre><p>
  * This example identifies that the client can receive audio on port 60000 in
  * format 0 which corresponds to PCMU/8000.
  * <p>

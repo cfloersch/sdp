@@ -25,7 +25,7 @@ import xpertss.lang.Strings;
  *    <li>the name of the user originating the session,</li>
  *    <li>a unique session identifier, and</li>
  *    <li>a unique version for the session.</li>
- * </ul>
+ * </ul><p>
  * These fields should uniquely identify the session.
  * <p>
  * The Origin also includes:
@@ -33,7 +33,7 @@ import xpertss.lang.Strings;
  *    <li>the network type,</li>
  *    <li>address type, and</li>
  *    <li>address of the originator.</li>
- * </ul>
+ * </ul><p>
  * Please refer to IETF RFC 4566 for a description of SDP.
  *
  * @version 1.0

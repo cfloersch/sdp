@@ -23,7 +23,7 @@ import java.util.List;
  *    <li>a protocol to be used (e.g., RTP/AVP)</li>
  *    <li>a set of media formats which correspond to Attributes associated with the
  *        media description.</li>
- * </ul>
+ * </ul><p>
  * The following is an example
  * <p><pre>
  *    m=audio 60000 RTP/AVP 0

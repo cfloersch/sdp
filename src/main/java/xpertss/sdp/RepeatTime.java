@@ -20,7 +20,7 @@ import java.util.Arrays;
  * offsets relative to the t=start-time (see Time.getStart()).
  * <p>
  * Quoting from RFC 4566:
- * <p>{@code
+ * <p><pre>{@code
  *     For example, if a session is active at 10am on Monday and 11am on Tuesday for
  *     one hour each week for three months, then the <start time> in the corresponding
  *     "t=" field would be the NTP representation of 10am on the first Monday, the
@@ -31,7 +31,7 @@ import java.util.Arrays;
  *
  *           t=3034423619 3042462419
  *           r=604800 3600 0 90000
- * }
+ * }</pre>
  * <p>
  * Please refer to IETF RFC 4566 for a description of SDP.
  *

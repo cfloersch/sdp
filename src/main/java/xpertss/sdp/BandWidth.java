@@ -13,14 +13,14 @@ import xpertss.lang.Strings;
 /**
  * A Bandwidth represents the b= fields contained within either a MediaDescription or
  * a SessionDescription.
- *
+ * <p>
  * This specifies the proposed bandwidth to be used by the session or media, and is
  * optional. Multiple bandwidth specifiers of different types may be associated with
  * the same SessionDescription. Each consists of a token type and an integer value
  * measuring bandwidth in kilobits per second.
- *
+ * <p>
  * RFC 4566 defines two bandwidth types (or modifiers):
- *
+ * <p><pre>
  * CT
  *     Conference Total: An implicit maximum bandwidth is associated with each TTL on
  *     the Mbone or within a particular multicast administrative scope region (the
@@ -35,11 +35,11 @@ import xpertss.lang.Strings;
  *     specific, i.e., will be the application's concept of maximum bandwidth.
  *     Normally this will coincide with what is set on the application's "maximum
  *     bandwidth" control if applicable.
- *
+ * </pre><p>
  * Note that CT gives a total bandwidth figure for all the media at all sites. AS gives
  * a bandwidth figure for a single media at a single site, although there may be many
  * sites sending simultaneously.
- *
+ * <p>
  * Please refer to IETF RFC 4566 for a description of SDP.
  *
  * @version 1.0
