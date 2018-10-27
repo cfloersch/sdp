@@ -26,6 +26,6 @@ SessionDescription sdpThree = builder.build();
 ````
 
 For more info on Session Description Protocol please visit:
-https://tools.ietf.org/html/rfc4566
-http://en.wikipedia.org/wiki/Session_Description_Protocol
+* https://tools.ietf.org/html/rfc4566
+* http://en.wikipedia.org/wiki/Session_Description_Protocol
 
