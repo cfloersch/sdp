@@ -8,6 +8,7 @@ package xpertss.sdp;
 import xpertss.lang.Numbers;
 import xpertss.lang.Objects;
 import xpertss.lang.Strings;
+import xpertss.util.Lists;
 
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -69,16 +70,16 @@ public final class SessionBuilder {
          name = existing.getSessionName();
          info = existing.getInfo();
          uri = existing.getUri();
-         emails = Arrays.asList(existing.getEmails());
-         phones = Arrays.asList(existing.getPhones());
-         connection = existing.getConnection();
-         for(BandWidth bw: existing.getBandwidths()) bandwidths.put(bw.getType(), bw);
-         times = Arrays.asList(existing.getTimeDescriptions());
-         TimeZones zones = existing.getTimeZones();
-         if(zones != null) adjustments = Arrays.asList(zones.getAdjustments());
          key = existing.getKey();
+         connection = existing.getConnection();
+         Collections.addAll(emails, existing.getEmails());
+         Collections.addAll(phones, existing.getPhones());
+         for(BandWidth bw: existing.getBandwidths()) bandwidths.put(bw.getType(), bw);
+         Collections.addAll(times, existing.getTimeDescriptions());
+         TimeZones zones = existing.getTimeZones();
+         if(zones != null) Collections.addAll(adjustments, zones.getAdjustments());
          Collections.addAll(attributes, existing.getAttributes());
-         medias = Arrays.asList(existing.getMediaDescriptions());
+         Collections.addAll(medias, existing.getMediaDescriptions());
       }
    }
 
