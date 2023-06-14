@@ -39,7 +39,7 @@ import static xpertss.sdp.SdpConstants.NETWORK_TYPE_INTERNET;
 public final class OriginBuilder {
 
    private String username;
-   private long sessionId;
+   private String sessionId;
    private long version = -1;
 
    private String address;
@@ -86,16 +86,16 @@ public final class OriginBuilder {
     * Defaults to the current Ntp time. This will always take the absolute
     * value of any supplied argument.
     */
-   public OriginBuilder setSessionId(long sessionId)
+   public OriginBuilder setSessionId(String sessionId)
    {
-      this.sessionId = Math.abs(sessionId);
+      this.sessionId = Strings.nullIfEmpty(sessionId);;
       return this;
    }
 
    /**
     * Get the sessionId that the origin will be built with.
     */
-   public long getSessionId()
+   public String getSessionId()
    {
       return sessionId;
    }
@@ -195,7 +195,7 @@ public final class OriginBuilder {
       // if sessionId is 0 use current time (NTP format)
       // if version is 0 use random between 1 & 65535
       return new Origin(Strings.ifEmpty(username, System.getProperty("user.name")),
-            (sessionId == 0) ? Utils.currentNtpTime() : sessionId,
+            Strings.ifEmpty(sessionId, Long.toString(Utils.currentNtpTime())),
             (version == -1) ? Longs.random(0,65535) : version,
             Strings.ifEmpty(address, NetUtils.getLocalAddress()),
             Strings.ifEmpty(addressType, ADDRESS_TYPE_IP4),

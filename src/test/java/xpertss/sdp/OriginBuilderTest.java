@@ -41,10 +41,10 @@ public class OriginBuilderTest {
    public void testSessionIdProperty()
    {
       OriginBuilder builder = OriginBuilder.create();
-      assertEquals(0, builder.getSessionId());
-      builder.setSessionId(220).setSessionId(320);
-      assertEquals(320, builder.getSessionId());
-      assertEquals(320, builder.build().getSessionId());
+      assertNull(builder.getSessionId());
+      builder.setSessionId("220").setSessionId("320");
+      assertEquals("320", builder.getSessionId());
+      assertEquals("320", builder.build().getSessionId());
    }
 
    @Test
@@ -91,7 +91,7 @@ public class OriginBuilderTest {
    public void testPreexisting()
    {
       OriginBuilder original = OriginBuilder.create();
-      Origin origin = original.setUsername("bill").setSessionId(10).setSessionVersion(20).build();
+      Origin origin = original.setUsername("bill").setSessionId("10").setSessionVersion(20).build();
       OriginBuilder existing = OriginBuilder.create(origin);
       assertEquals(existing.getUsername(), origin.getUsername());
       assertEquals(existing.getSessionId(), origin.getSessionId());

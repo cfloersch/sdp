@@ -42,7 +42,7 @@ public class SessionDescriptionTest {
    public void setUp()
    {
       OriginBuilder origin = OriginBuilder.create();
-      origin.setUsername("RTSP").setSessionId(2285599416L).setSessionVersion(34);
+      origin.setUsername("RTSP").setSessionId("2285599416").setSessionVersion(34);
       origin.setAddress("172.16.10.1").setAddressType(ADDRESS_TYPE_IP4).setNetworkType(NETWORK_TYPE_INTERNET);
 
       MediaBuilder audio = MediaBuilder.create();
@@ -130,7 +130,7 @@ public class SessionDescriptionTest {
    {
       Origin origin = objectUnderTest.getOrigin();
       assertEquals("RTSP", origin.getUsername());
-      assertEquals(2285599416L, origin.getSessionId());
+      assertEquals("2285599416", origin.getSessionId());
       assertEquals("172.16.10.1", origin.getAddress());
    }
 

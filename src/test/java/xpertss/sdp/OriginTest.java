@@ -9,8 +9,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static xpertss.sdp.SdpConstants.ADDRESS_TYPE_IP4;
-import static xpertss.sdp.SdpConstants.NETWORK_TYPE_INTERNET;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -25,67 +23,62 @@ public class OriginTest {
    @Before
    public void setUp()
    {
-      objectUnderTest = new Origin(USERNAME, 200, 1, ADDRESS, SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      objectUnderTest = new Origin(USERNAME, "200", 1, ADDRESS, SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNullUsername()
    {
-      new Origin(null, 200, 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin(null, "200", 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionEmptyUsername()
    {
-      new Origin("", 200, 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("", "200", 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNullAddress()
    {
-      new Origin("joe", 200, 1, null, SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("joe", "200", 1, null, SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionEmptyAddress()
    {
-      new Origin("joe", 200, 1, "", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("joe", "200", 1, "", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNullAddressType()
    {
-      new Origin("joe", 200, 1, "10.0.0.1", null, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("joe", "200", 1, "10.0.0.1", null, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionEmptyAddressType()
    {
-      new Origin("joe", 200, 1, "10.0.0.1", "", SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("joe", "200", 1, "10.0.0.1", "", SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNullNetworkType()
    {
-      new Origin("joe", 200, 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, null);
+      new Origin("joe", "200", 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, null);
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNullEmptyType()
    {
-      new Origin("joe", 200, 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, "");
+      new Origin("joe", "200", 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, "");
    }
 
-   @Test(expected = IllegalArgumentException.class)
-   public void testConstructionNegativeSessionId()
-   {
-      new Origin("joe", -200, 1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
-   }
 
    @Test(expected = IllegalArgumentException.class)
    public void testConstructionNegativeSessionVersion()
    {
-      new Origin("joe", 200, -1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
+      new Origin("joe", "200", -1, "10.0.0.1", SdpConstants.ADDRESS_TYPE_IP4, SdpConstants.NETWORK_TYPE_INTERNET);
    }
 
    @Test
@@ -93,7 +86,7 @@ public class OriginTest {
    {
       assertEquals(USERNAME, objectUnderTest.getUsername());
       assertEquals(ADDRESS, objectUnderTest.getAddress());
-      assertEquals(200, objectUnderTest.getSessionId());
+      assertEquals("200", objectUnderTest.getSessionId());
       assertEquals(1, objectUnderTest.getSessionVersion());
       Assert.assertEquals(SdpConstants.ADDRESS_TYPE_IP4, objectUnderTest.getAddressType());
       Assert.assertEquals(SdpConstants.NETWORK_TYPE_INTERNET, objectUnderTest.getNetworkType());

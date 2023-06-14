@@ -44,18 +44,18 @@ public final class Origin extends Field {
    private String address;
    private String addressType;
    private String networkType;
-   private long sessionId;
+   private String sessionId;
    private long version;
 
 
-   Origin(String username, long sessionId, long version, String address, String addressType, String networkType)
+   Origin(String username, String sessionId, long version, String address, String addressType, String networkType)
    {
       this.username = Strings.notEmpty(Strings.trim(username), "username may not be empty");
+      this.sessionId = Strings.notEmpty(Strings.trim(sessionId), "sessionId may not be empty");
       this.address = Strings.notEmpty(Strings.trim(address), "address may not be empty");
       this.addressType = Strings.notEmpty(Strings.trim(addressType), "addressType may not be empty");
       this.networkType = Strings.notEmpty(Strings.trim(networkType), "networkType may not be empty");
 
-      this.sessionId = Numbers.gt(0L, sessionId, "sessionId must be greater than zero");
       this.version = Numbers.gte(0L, version, "session version must not be negative");
    }
 
@@ -70,7 +70,7 @@ public final class Origin extends Field {
    /**
     * Returns the unique identity of the session.
     */
-   public long getSessionId()
+   public String getSessionId()
    {
       return sessionId;
    }

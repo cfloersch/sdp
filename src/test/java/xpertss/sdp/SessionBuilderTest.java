@@ -58,11 +58,11 @@ public class SessionBuilderTest {
       assertNull(objectUnderTest.getOrigin());
       assertNotNull(objectUnderTest.build().getOrigin());
       OriginBuilder origin = OriginBuilder.create();
-      objectUnderTest.setOrigin(origin.setUsername("joe").build()).setOrigin(origin.setSessionId(200).build());
+      objectUnderTest.setOrigin(origin.setUsername("joe").build()).setOrigin(origin.setSessionId("200").build());
       assertEquals("joe", objectUnderTest.getOrigin().getUsername());
-      assertEquals(200L, objectUnderTest.getOrigin().getSessionId());
+      assertEquals("200", objectUnderTest.getOrigin().getSessionId());
       assertEquals("joe", objectUnderTest.build().getOrigin().getUsername());
-      assertEquals(200L, objectUnderTest.build().getOrigin().getSessionId());
+      assertEquals("200", objectUnderTest.build().getOrigin().getSessionId());
       objectUnderTest.setOrigin(null);
       assertNull(objectUnderTest.getOrigin());
       assertNotNull(objectUnderTest.build().getOrigin());

@@ -225,9 +225,7 @@ public class SessionParser {
             String[] parts = line.substring(2).split("\\s+");
             if(parts.length != 6) throw new SdpParseException("invalid origin line: " + line.substring(2));
             OriginBuilder origin = OriginBuilder.create().setUsername(parts[0]);
-            long sessionId = Longs.parse(parts[1], -1);
-            if(sessionId < 0) throw new SdpParseException("invalid origin sessionId: " + parts[1]);
-            origin.setSessionId(sessionId);
+            origin.setSessionId(parts[1]);
             long version = Longs.parse(parts[2], -1);
             if(version < 0) throw new SdpParseException("invalid origin session version: " + parts[2]);
             origin.setSessionVersion(version);

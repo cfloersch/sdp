@@ -1,0 +1,2 @@
+The SectionBuilder can be a base class to MediaBuilder and possibly others. I was in the middle
+of doing this and lost track of where I was.
