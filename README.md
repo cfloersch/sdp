@@ -18,7 +18,7 @@ builder.setSessionName("Session Name").setInfo("My Info");
 
 SessionDescription sdpOne = builder.build();
 
-builder.setOrigin(OriginBuilder.create(builder.getOrigin()).setSessionId(201).build());
+builder.setOrigin(OriginBuilder.create(builder.getOrigin()).setSessionId("201").build());
 SessionDescription sdpTwo = builder.build();
 
 builder.addEmail("joe@whatever.com").addEmail("fred@none.com");
