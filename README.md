@@ -11,7 +11,7 @@ SessionDescription sdp = parser.parse(inputstream);
 Here is an example of building a session description
 ````
 OriginBuilder origin = OriginBuilder.create();
-origin.setUsername("joe").setSessionId(200);
+origin.setUsername("joe").setSessionId("200");
 SessionBuilder builder = SessionBuilder.create();
 builder.setVersion(1).setOrigin(origin.build());
 builder.setSessionName("Session Name").setInfo("My Info");
